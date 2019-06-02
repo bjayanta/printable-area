@@ -1,7 +1,7 @@
 # Printable Area Functionality 
 It's a simple test.
 
-## Using Javascript(ES6):
+## Using Javascript:
 ```javascript
 function printable(area) {
 	var printContents = document.querySelector(area).innerHTML, // get printable content 
