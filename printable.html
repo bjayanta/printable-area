@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Printable Area</title>
+
+    <style>
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        h3 {
+            color: red;
+        }
+
+        @media print {
+            h3 {
+                color: black;
+            }
+        }
+
+        @media screen, print { }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>This is a test.</h1>
+
+        <article>
+            <h3>Printable area</h3>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quam laudantium impedit aperiam quisquam ut aspernatur, nisi quis deserunt? Natus dolore velit eligendi laudantium odit quibusdam impedit quisquam, quos recusandae deleniti, explicabo debitis voluptates esse quam ipsum beatae illum tenetur! Architecto pariatur suscipit perferendis, fugiat quod voluptatem sunt quasi saepe. Molestias totam facere laborum temporibus aut sapiente vero autem culpa minus excepturi placeat natus nulla labore dolore accusantium nisi sed exercitationem porro eaque suscipit laudantium, atque reiciendis animi? Iure, placeat. Iure veniam distinctio, autem cupiditate et quo similique sed officiis incidunt soluta placeat ea deleniti velit consequuntur in. Quia debitis ex quis fuga? Blanditiis minima ipsum qui repellat nesciunt consequuntur necessitatibus velit, reprehenderit eaque libero quidem officia dicta ab dolores sed deleniti iusto sapiente! Maxime voluptates sunt unde quos. Voluptatum vel corporis recusandae eius iste iusto magnam animi quia laborum, dolores facilis atque temporibus id assumenda illum doloribus numquam eaque enim!</p>
+    
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum obcaecati pariatur nulla enim, fugit laborum natus dicta saepe vel aliquam eaque itaque sint! Est itaque recusandae, animi facilis delectus error quasi cum neque voluptatibus nam quia saepe distinctio voluptate illo eum, dolore impedit quod. Facere libero sit omnis id maxime accusantium quos consectetur exercitationem quis hic ea praesentium cupiditate assumenda reiciendis, aspernatur necessitatibus harum, alias eos animi tenetur. Temporibus facilis, officia esse expedita recusandae excepturi?</p>
+        </article>
+    
+        <button onclick="printable('article')"> Print </button>
+    </div>
+    
+    <!-- For Div Print -->
+    <script type="text/javascript">
+        function printable(area) {
+            var printContents = document.querySelector(area).innerHTML, // get printable content 
+                originalContents = document.body.innerHTML; // get document content
+            
+            // make a temporary document for printable content
+            document.body.innerHTML = printContents;
+            window.print(); // print the current document
+
+            // restore the original document 
+            document.body.innerHTML = originalContents;
+        }
+    </script>
+  
+</body>
+</html>
